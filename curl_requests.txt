@@ -1,0 +1,36 @@
+curl --include --request POST http://localhost:3000/workouts \
+          --header "Content-Type: application/json" \
+          --data '{
+          t.references :user, index: true, foreign_key: true, null: false
+          t.string :cardio_desc, null: false
+          t.date :cardio_date, null: false
+          t.integer :cardio_duration
+          t.float :cardio_distance
+          t.text :cardio_notes
+              "song": {
+                   "title": "Hungry Eyes",
+                   "length": 283,
+                   "rating": 5
+              }
+          }'
+
+
+    curl --include --request POST http://localhost:3000/users \
+              --header "Content-Type: application/json" \
+              --data '{
+              t.references :user, index: true, foreign_key: true, null: false
+              t.string :cardio_desc, null: false
+              t.date :cardio_date, null: false
+              t.integer :cardio_duration
+              t.float :cardio_distance
+              t.text :cardio_notes
+                  "song": {
+                       "title": "Hungry Eyes",
+                       "length": 283,
+                       "rating": 5
+                  }
+              }'
+
+              t.references :user, index: true, foreign_key: true, null: false
+              add_column :users, :first_name, :string, null: false
+              add_column :users, :last_name, :string, null: false

@@ -1,4 +1,4 @@
-<% project_name = 'rails-api-template' %>
+<% project_name = 'project2' %>
 
 default: &default
   adapter: postgresql

@@ -1,0 +1,8 @@
+INSERT INTO users(email, token, password_digest, created_at, updated_at) VALUES ('someone', 1234, 1234, '2001-09-28 01:00:00', '2001-09-28 01:00:00');
+
+INSERT INTO users(email, token, password_digest, created_at, updated_at) VALUES ('person', 5678, 5678, '2001-09-28 01:00:00', '2001-09-28 01:00:00');
+
+
+INSERT INTO workouts(user_id, cardio_desc, cardio_date, cardio_duration, cardio_distance, cardio_notes) VALUES (2, 'Run', '2016-04-12', 40, 2.3, 'This was a tough run');
+
+INSERT INTO workouts(user_id, cardio_desc, cardio_date, cardio_duration, cardio_distance, cardio_notes) VALUES (2, 'Run', '2016-04-12', 40, 2.3, 'This was a tough run');
