@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-
+    puts 'sup guys'
     if @profile.save
       render json: @profile, status: :created, location: @profile
     else
@@ -54,6 +54,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name)
+    params.require(:profile).permit(:user_id, :first_name, :last_name)
   end
 end
