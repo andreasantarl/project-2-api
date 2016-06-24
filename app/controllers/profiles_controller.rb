@@ -19,7 +19,6 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-    puts 'sup guys'
     if @profile.save
       render json: @profile, status: :created, location: @profile
     else
