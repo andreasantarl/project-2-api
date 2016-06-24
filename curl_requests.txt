@@ -34,6 +34,11 @@ curl --include --request POST http://localhost:3000/profiles \
             }
         }'
 
+        curl --include --request GET http://localhost:3000/profiles/5 \
+            --header "Content-Type: application/json" \
+          "Authorization: Token e3d9708f126e6f858d79c468d3800a43"
+
+
               t.references :user, index: true, foreign_key: true, null: false
               add_column :users, :first_name, :string, null: false
               add_column :users, :last_name, :string, null: false
