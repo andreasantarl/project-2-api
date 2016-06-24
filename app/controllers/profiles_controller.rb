@@ -32,8 +32,8 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
-    @profile = current_user.Profile(params[:id])
-    # @profile = Profile.find(params[:id])
+    # @profile = current_user.Profile(params[:id])
+     @profile = Profile.find(params[:id])
 
     if @profile.update(profile_params)
       head :no_content
