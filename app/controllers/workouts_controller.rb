@@ -1,5 +1,6 @@
 class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:show, :update, :destroy]
+  before_action :authenticate, only: [:show, :create, :update, :destroy]
 
   # GET /workouts
   # GET /workouts.json
@@ -49,13 +50,13 @@ class WorkoutsController < ApplicationController
 
   private
 
-    def set_workout
-      @workout = Workout.find(params[:id])
-    end
+  def set_workout
+    @workout = Workout.find(params[:id])
+  end
 
-    def workout_params
-      params.require(:workout).permit(:cardio_desc, :cardio_date,
-                                      :cardio_duration, :cardio_distance,
-                                      :cardio_notes)
-    end
+  def workout_params
+    params.require(:workouts).permit(:user_id, :id, :cardio_desc, :cardio_date,
+                                     :cardio_duration, :cardio_distance,
+                                     :cardio_notes)
+  end
 end
