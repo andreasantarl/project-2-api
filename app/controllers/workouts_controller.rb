@@ -10,6 +10,11 @@ class WorkoutsController < ApplicationController
     render json: @workouts
   end
 
+  def findByDate
+    @workouts = Workout.select { |workout| workout if workout.cardio_date.to_s == params[:date]}
+
+    render json: @workouts
+  end
   # GET /workouts/1
   # GET /workouts/1.json
   def show
