@@ -33,7 +33,7 @@ class WorkoutsController < ApplicationController
   def update
     @workout = Workout.find(params[:id])
 
-    if @workout.update(workout_params)
+    if @workout.update(one_workout_params)
       head :no_content
     else
       render json: @workout.errors, status: :unprocessable_entity
@@ -56,6 +56,12 @@ class WorkoutsController < ApplicationController
 
   def workout_params
     params.require(:workouts).permit(:user_id, :id, :cardio_desc, :cardio_date,
+                                     :cardio_duration, :cardio_distance,
+                                     :cardio_notes)
+  end
+
+  def one_workout_params
+    params.require(:workout).permit(:user_id, :id, :cardio_desc, :cardio_date,
                                      :cardio_duration, :cardio_distance,
                                      :cardio_notes)
   end
