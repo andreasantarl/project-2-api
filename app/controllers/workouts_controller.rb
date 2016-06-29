@@ -11,7 +11,12 @@ class WorkoutsController < ApplicationController
   end
 
   def findByDate
-    @workouts = Workout.select { |workout| workout if workout.cardio_date.to_s == params[:date]}
+        id = @current_user
+        @workouts = Workout.where(user_id: id).select { |workout| workout if workout.cardio_date.to_s == params[:date] }
+
+        # @workouts = Workout.select { |workout| workout if workout.cardio_date.to_s == params[:date] }
+        # binding.pry
+    # @workouts = Workout.select { |workout| workout if workout.cardio_date.to_s == params[:date] && workout.user_id == params[:user_id]}
 
     render json: @workouts
   end
